@@ -2,7 +2,11 @@
 
 set -e
 
-BUCKET="s3://polaris-assets/"
+if [[ -z $BUCKET ]]; then
+    echo "BUCKET is not set"
+
+    exit 1
+fi
 
 rm -rf dist
 mkdir dist
