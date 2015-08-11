@@ -31,7 +31,7 @@ do
     extension="${filename##*.}"
     hash=$(cat $filename | sha1sum | cut -f1 -d" ")
     hash=${hash:0:7}
-    cp "$filename" dist/${dir}${file}-$hash.${extension##*.}
+    cp "$filename" "dist/${dir}${file}-$hash.${extension##*.}"
 done
 
 for filename in $(find dist -type f)
