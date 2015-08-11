@@ -3,7 +3,9 @@
 GZIP, add sha for cache busting and upload to S3 with gzip encoding.
 
 ## Dependencies
-**MAC:** brew install md5sha1sum
+**MAC:**
+- `brew install md5sha1sum`
+- `pip install awscli` (https://aws.amazon.com/cli/)
 
 Or equivalent package on other OS
 
