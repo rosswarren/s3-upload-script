@@ -1,3 +1,4 @@
-images
+images/*
+!images/.gitkeep
 dist
 .DS_Store
