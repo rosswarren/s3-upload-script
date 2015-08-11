@@ -16,6 +16,7 @@ printf "Done"
 
 find images -name ‘*.DS_Store’ -type f -delete
 
+IFS=$'\n'
 for filename in $(find images -type f ! -name ".DS_Store")
 do
     file=`basename $filename`
@@ -29,7 +30,7 @@ do
 
     file="${file%.*}"
     extension="${filename##*.}"
-    hash=$(cat $filename | sha1sum | cut -f1 -d" ")
+    hash=$(cat "$filename" | sha1sum | cut -f1 -d" ")
     hash=${hash:0:7}
     cp "$filename" "dist/${dir}${file}-$hash.${extension##*.}"
 done
