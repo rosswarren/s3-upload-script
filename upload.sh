@@ -19,8 +19,9 @@ find images -name ‘*.DS_Store’ -type f -delete
 IFS=$'\n'
 for filename in $(find images -type f ! -name ".DS_Store")
 do
-    file=`basename $filename`
-    dir=`dirname $filename`
+    echo $filename
+    file=`basename "$filename"`
+    dir=`dirname "$filename"`
 
     if [[ -n $dir ]]; then
         dir="$dir/"
