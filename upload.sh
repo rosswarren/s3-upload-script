@@ -41,7 +41,7 @@ do
     gzip -t ${filename} > /dev/null 2>&1 || { echo "compressing ${filename}"; gzip -9 ${filename}; mv ${filename}.gz ${filename}; }
 done
 
-aws s3 sync dist ${BUCKET} --cache-control="max-age=31536000" --content-encoding="gzip"
+aws s3 sync dist ${BUCKET} --cache-control="public,max-age=31536000" --content-encoding="gzip"
 
 printf "Cleaning up... "
 printf "Done"
