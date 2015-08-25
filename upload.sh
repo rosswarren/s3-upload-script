@@ -44,4 +44,5 @@ done
 aws s3 sync dist ${BUCKET} --cache-control="public,max-age=31536000" --content-encoding="gzip"
 
 printf "Cleaning up... "
+rm -rf dist
 printf "Done"

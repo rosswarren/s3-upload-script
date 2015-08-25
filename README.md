@@ -11,5 +11,5 @@ Or equivalent package on other OS
 
 ## To run
 1. Add the images you want to upload to the images folder
-2. Run the upload.sh script `BUCKET="s3://your_bucket_name/" bash upload.sh`
-3. You can determine the URLs from the console output
+2. Run the resize.sh and upload.sh scripts `export BUCKET="s3://your_bucket_name/"; bash resize.sh && bash upload.sh`
+3. You can determine the URLs from the console output or run `node index.js` to search with filenames
