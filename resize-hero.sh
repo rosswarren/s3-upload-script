@@ -6,7 +6,7 @@ mkdir -p images/small
 
 find images -name ‘*.DS_Store’ -type f -delete
 IFS=$'\n'
-for file in $(find images -maxdepth 1 -type f ! -name ".DS_Store"); do
+for file in $(find images -maxdepth 1 -type f ! -name ".DS_Store" ! -name ".gitkeep"); do
   img=`basename "$file"`
 
   size=`convert "$file" -print "%wx%h\n" /dev/null`
